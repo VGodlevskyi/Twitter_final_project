@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003
+      author: kizotov
+      changes:
+        - sqlFile:
+            dbms: 'postgresql'
+            path: /migration/changesets/scripts/003_drop_seq.sql
+            stripComments: true
+        - sqlFile:
+            dbms: 'postgresql'
+            path: /migration/changesets/scripts/003_create_id_seq.sql
+            stripComments: true
+        - sqlFile:
+            dbms: 'postgresql'
+            path: /migration/changesets/scripts/003_drop_unique_seq_conn_tables.sql
+            stripComments: true

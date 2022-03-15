@@ -1,0 +1,53 @@
+server:
+  port: 8081
+
+spring:
+  liquibase:
+    enabled: true
+    change-log: /migration/changelog-master.yml
+  config:
+    activate:
+      on-profile: "dev"
+  datasource:
+    url: jdbc:postgresql://localhost:5432/twitterapp
+    username: twitterapp
+    password: twitterapp321
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: twitterapp.manager@gmail.com
+    password: TfgO-8923-a=-
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 964863155077-juj5ggldvir73hvcs4g90ni02l4v983k.apps.googleusercontent.com
+            clientSecret: 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
+            redirectUri: "{baseUrl}/oauth2/callback/google"
+            scope:
+              - email
+              - profile

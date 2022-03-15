@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004
+      author: kizotov
+      changes:
+        - sqlFile:
+            dbms: 'postgresql'
+            path: /migration/changesets/scripts/004_demo-users2.sql
+            stripComments: true
+        - sqlFile:
+            dbms: 'postgresql'
+            path: /migration/changesets/scripts/004_reset_seq.sql
+            stripComments: true

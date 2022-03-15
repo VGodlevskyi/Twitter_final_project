@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - include:
+      file: /migration/changesets/001_initial.yml
+  - include:
+      file: /migration/changesets/002_drop_not_null_pass.yml
+  - include:
+      file: /migration/changesets/003_sequences_for_ids.yml
+  - include:
+      file: /migration/changesets/004_demo-users.yml
+  - include:
+      file: /migration/changesets/005_reposts.yml
+  - include:
+      file: /migration/changesets/006_add_head-post_column.yml
+#  - include:
+#      file: /migration/changesets/007_subscribers_pk.yml
+  - include:
+      file: /migration/changesets/008_parent-tweet-column.yml

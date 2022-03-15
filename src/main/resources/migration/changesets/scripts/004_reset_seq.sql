@@ -1,0 +1,1 @@
+alter sequence entity_id_seq restart with 100;

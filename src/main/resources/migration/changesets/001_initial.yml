@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001
+      author: kizotov
+      changes:
+        - sqlFile:
+            dbms: 'postgresql'
+            path: /migration/changesets/scripts/001_initial-tables.sql
+            stripComments: true
+        - sqlFile:
+            dbms: 'postgresql'
+            path: /migration/changesets/scripts/001_demo-user.sql
+            stripComments: true

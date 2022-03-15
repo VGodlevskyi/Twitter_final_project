@@ -1,0 +1,7 @@
+# prod
+url: ${DB_URL}
+
+# dev
+referenceUrl: jdbc:postgresql://localhost:5432/twitterapp
+referenceUsername: twitterapp
+referencePassword: twitterapp321

@@ -1,0 +1,9 @@
+alter table chats alter column id drop identity;
+alter table comments alter column id drop identity;
+alter table confirmation_token alter column id drop identity;
+alter table messages alter column id drop identity;
+alter table post alter column id drop identity;
+alter table tbl_notification alter column id drop identity;
+alter table tbl_refresh_tokens alter column id drop identity;
+alter table tbl_repost alter column id drop identity;
+alter table tbl_user alter column id drop identity;

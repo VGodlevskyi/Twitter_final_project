@@ -1,0 +1,57 @@
+server:
+  port: ${PORT}
+
+spring:
+  liquibase:
+    enabled: true
+    change-log: /migration/changelog-master.yml
+  config:
+    activate:
+      on-profile: "prod"
+  datasource:
+    url: ${DATABASE_URL}
+    tomcat:
+      test-on-borrow: true
+      test-on-return: true
+      test-while-idle: true
+      validation-query: "SELECT 1"
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_ACC}
+    password: ${MAIL_PASS}
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: ${GOOGLE_CLIENT_ID}
+            clientSecret: ${GOOGLE_CLIENT_SECRET}
+            redirectUri: ${GOOGLE_CLIENT_REDIRECT}
+            scope:
+              - email
+              - profile
+

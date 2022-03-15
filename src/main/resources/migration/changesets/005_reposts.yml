@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 005
+      author: kizotov
+      changes:
+        - sqlFile:
+            dbms: 'postgresql'
+            path: /migration/changesets/scripts/005_repost_table.sql
+            stripComments: true

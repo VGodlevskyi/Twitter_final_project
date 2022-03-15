@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 006
+      author: kizotov
+      changes:
+        - sqlFile:
+            dbms: 'postgresql'
+            path: /migration/changesets/scripts/006_head-tweet-column.sql
+            stripComments: true
