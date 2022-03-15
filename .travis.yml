@@ -1,0 +1,25 @@
+cache:
+  directories:
+    - $HOME/.m2
+    - client/node_modules
+
+os: linux
+dist: focal
+language: java
+jdk: oraclejdk11
+install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+before_install:
+  - wget https://apache.mirror.gtcomm.net/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.tar.gz
+  - tar xzvf apache-maven-3.8.3-bin.tar.gz
+  - export PATH=`pwd`/apache-maven-3.8.3/bin:$PATH
+  - mvn -v
+#  - nvm install node
+
+before_script:
+#  - npm install --prefix client/
+
+script:
+  - mvn clean test
+  - mvn clean verify
+#  - npm run build --prefix client/
